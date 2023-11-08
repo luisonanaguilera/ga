@@ -8,8 +8,8 @@ import axios from 'axios';
 import moment from 'moment-timezone';
 
 global.owner = [
-  ['51941051780', '👑 Mystic - Creador 👑', true],
-  ['5493884628577','💫 Mystic - Tester Fabri115💫', true]
+  ['51958959882', '👑 Mystic - Creador 👑', true],
+  ['51941051780','💫 Mystic - Tester Fabri115💫', true]
 ];
 
 global.suittag = ['5219993404349'];
