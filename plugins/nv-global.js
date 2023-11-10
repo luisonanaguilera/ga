@@ -288,13 +288,6 @@ handler.all = async function(m, {conn}) {
     this.sendMessage(m.chat, {audio: {url: vn}, fileName: 'error.mp3', mimetype: 'audio/mpeg', ptt: true}, {quoted: m});
   }
 
-  if (!chat.isBanned && chat.audios && m.text.match(/(epico|esto va a ser epico)/gi)) {
-    if (!db.data.settings[this.user.jid].audios_bot && !m.isGroup) return;
-    const vn = './media/Epico.mp3';
-    this.sendPresenceUpdate('recording', m.chat);
-    this.sendMessage(m.chat, {audio: {url: vn}, fileName: 'error.mp3', mimetype: 'audio/mpeg', ptt: true}, {quoted: m});
-  }
-
   if (!chat.isBanned && chat.audios && m.text.match(/(shitpost)/gi)) {
     if (!db.data.settings[this.user.jid].audios_bot && !m.isGroup) return;
     const vn = './media/shitpost.mp3';
@@ -309,6 +302,19 @@ handler.all = async function(m, {conn}) {
     this.sendMessage(m.chat, {audio: {url: vn}, fileName: 'error.mp3', mimetype: 'audio/mpeg', ptt: true}, {quoted: m});
   }
   
+  if (!chat.isBanned && chat.audios && m.text.match(/(epico|épico|Epico|Épico)/gi)) {
+    if (!db.data.settings[this.user.jid].audios_bot && !m.isGroup) return;
+    const vn = './media/Épico.mp3';
+    this.sendPresenceUpdate('recording', m.chat);
+    this.sendMessage(m.chat, {audio: {url: vn}, fileName: 'error.mp3', mimetype: 'audio/mpeg', ptt: true}, {quoted: m});
+  }
+  
+  if (!chat.isBanned && chat.audios && m.text.match(/(Compartan|compartan)/gi)) {
+    if (!db.data.settings[this.user.jid].audios_bot && !m.isGroup) return;
+    const vn = './media/Compartan.mp3';
+    this.sendPresenceUpdate('recording', m.chat);
+    this.sendMessage(m.chat, {audio: {url: vn}, fileName: 'error.mp3', mimetype: 'audio/mpeg', ptt: true}, {quoted: m});
+
 
   return !0;
 };
