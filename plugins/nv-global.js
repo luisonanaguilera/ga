@@ -314,6 +314,13 @@ handler.all = async function(m, {conn}) {
     const vn = './media/Compartan.mp3';
     this.sendPresenceUpdate('recording', m.chat);
     this.sendMessage(m.chat, {audio: {url: vn}, fileName: 'error.mp3', mimetype: 'audio/mpeg', ptt: true}, {quoted: m});
+  }
+  
+  if (!chat.isBanned && chat.audios && m.text.match(/(añañin|Añañin)/gi)) {
+    if (!db.data.settings[this.user.jid].audios_bot && !m.isGroup) return;
+    const vn = './media/Añañin.mp3';
+    this.sendPresenceUpdate('recording', m.chat);
+    this.sendMessage(m.chat, {audio: {url: vn}, fileName: 'error.mp3', mimetype: 'audio/mpeg', ptt: true}, {quoted: m});
 
 
   return !0;
