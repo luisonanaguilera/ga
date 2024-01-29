@@ -9,7 +9,7 @@ import moment from 'moment-timezone';
 
 global.owner = [
   ['51958959882', '👑 Mystic - Creador 👑', true],
-  ['51941051780','💫 Mystic - Tester Fabri115💫', true]
+  ['5493884873298','💫 Mystic - Tester Fabri115💫', true]
 ];
 
 global.suittag = ['5219993404349'];
