@@ -55,6 +55,12 @@ const vn = './media/gemi2.mp3';
 this.sendPresenceUpdate('recording', m.chat)   
 this.sendMessage(m.chat, { audio: { url: vn }, fileName: 'error.mp3', mimetype: 'audio/mp4', ptt: true }, { quoted: m })} 
 
+if (!chat.isBanned && m.text.match(/(tu no mete|Tu no mete|Tú no mete|tú no mete)/gi)) {
+if (!db.data.chats[m.chat].audios) return;
+const vn = './media/Tu no mete.mp3';
+this.sendPresenceUpdate('recording', m.chat)   
+this.sendMessage(m.chat, { audio: { url: vn }, fileName: 'error.mp3', mimetype: 'audio/mp4', ptt: true }, { quoted: m })} 
+
     
 return !0 }
 export default handler
