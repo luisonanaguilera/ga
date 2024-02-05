@@ -31,6 +31,18 @@ const vn = './media/Añañin.mp3';
 this.sendPresenceUpdate('recording', m.chat)   
 this.sendMessage(m.chat, { audio: { url: vn }, fileName: 'error.mp3', mimetype: 'audio/mp4', ptt: true }, { quoted: m })} 
 
+if (!chat.isBanned && m.text.match(/(Compartan|compartan)/gi)) {
+if (!db.data.chats[m.chat].audios) return;
+const vn = './media/Compartan.mp3';
+this.sendPresenceUpdate('recording', m.chat)   
+this.sendMessage(m.chat, { audio: { url: vn }, fileName: 'error.mp3', mimetype: 'audio/mp4', ptt: true }, { quoted: m })} 
+
+if (!chat.isBanned && m.text.match(/(epico|épico|Epico|Épico)/gi)) {
+if (!db.data.chats[m.chat].audios) return;
+const vn = './media/Épico.mp3';
+this.sendPresenceUpdate('recording', m.chat)   
+this.sendMessage(m.chat, { audio: { url: vn }, fileName: 'error.mp3', mimetype: 'audio/mp4', ptt: true }, { quoted: m })} 
+
     
 return !0 }
 export default handler
