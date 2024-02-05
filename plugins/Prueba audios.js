@@ -43,6 +43,18 @@ const vn = './media/Épico.mp3';
 this.sendPresenceUpdate('recording', m.chat)   
 this.sendMessage(m.chat, { audio: { url: vn }, fileName: 'error.mp3', mimetype: 'audio/mp4', ptt: true }, { quoted: m })} 
 
+if (!chat.isBanned && m.text.match(/(Te amo|te amo|teamo)/gi)) {
+if (!db.data.chats[m.chat].audios) return;
+const vn = './media/Te-amo.mp3';
+this.sendPresenceUpdate('recording', m.chat)   
+this.sendMessage(m.chat, { audio: { url: vn }, fileName: 'error.mp3', mimetype: 'audio/mp4', ptt: true }, { quoted: m })} 
+
+if (!chat.isBanned && m.text.match(/(gemidos|gemime|gime|gemime|gemi2)/gi)) {
+if (!db.data.chats[m.chat].audios) return;
+const vn = './media/gemi2.mp3';
+this.sendPresenceUpdate('recording', m.chat)   
+this.sendMessage(m.chat, { audio: { url: vn }, fileName: 'error.mp3', mimetype: 'audio/mp4', ptt: true }, { quoted: m })} 
+
     
 return !0 }
 export default handler
