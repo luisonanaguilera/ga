@@ -1,3 +1,18 @@
+require('../main.js') 
+const fs = require("fs")
+const { smsg, getGroupAdmins, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, delay, format, logic, generateProfilePicture, parseMention, getRandom } = require('../libs/fuctions.js'); 
+const path = require("path")
+const chalk = require("chalk");
+const moment = require('moment-timezone') 
+const gradient = require('gradient-string') 
+const fetch = require('node-fetch') 
+const axios = require('axios')
+const cheerio = require('cheerio')
+const {googleImage} = require('@bochilteam/scraper') 
+const Jimp = require('jimp')
+const FormData = require("form-data") 
+const os = require('os')
+
 if (command == 'chatgpt' || command == 'ia') {
 const translate = require('@vitalets/google-translate-api') 
 const {Configuration, OpenAIApi} = require('openai') 
@@ -86,3 +101,11 @@ const akuariapiresult1 = await translate(`${akuariapijson1.respon}`, {to: 'es', 
 m.reply(`${akuariapiresult1.text}`.trim());
 } catch {
 return m.reply(info.error)}}}}}}}}}}}
+
+let file = require.resolve(__filename)
+fs.watchFile(file, () => {
+	fs.unwatchFile(file)
+	console.log(chalk.redBright(`Update ${__filename}`))
+	delete require.cache[file]
+	require(file)
+})
