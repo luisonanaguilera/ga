@@ -61,6 +61,12 @@ const vn = './media/Tu no mete.mp3';
 this.sendPresenceUpdate('recording', m.chat)   
 this.sendMessage(m.chat, { audio: { url: vn }, fileName: 'error.mp3', mimetype: 'audio/mp4', ptt: true }, { quoted: m })} 
 
+if (!chat.isBanned && m.text.match(/(Yamete|yamete|Yamete kudasai|yamete kudasai)/gi)) {
+if (!db.data.chats[m.chat].audios) return;
+const vn = './media/Yamete-kudasai.mp3';
+this.sendPresenceUpdate('recording', m.chat)   
+this.sendMessage(m.chat, { audio: { url: vn }, fileName: 'error.mp3', mimetype: 'audio/mp4', ptt: true }, { quoted: m })} 
+  
 if (!chat.isBanned && m.text.match(/(martes|Martes)/gi)) {
 if (!db.data.chats[m.chat].audios) return;
 const vn = './media/Martes.mp3';
